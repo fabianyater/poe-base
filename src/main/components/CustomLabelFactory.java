@@ -19,6 +19,13 @@ public class CustomLabelFactory {
                 .build();
     }
 
+    public JLabel createWarningLabel2(String text) {
+        return new LabelBuilder(text)
+                .setColor(Color.RED)
+                .setFontStyle(FontEnums.LabelFontStyle.BOLD)
+                .build();
+    }
+
     public JLabel createSuccessLabel(String text) {
         return new LabelBuilder(text)
                 .setColor(Color.GREEN)
