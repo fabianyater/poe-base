@@ -1,11 +1,11 @@
 package main;
 
-import main.components.CustomButtonFactory;
-import main.components.CustomLabelFactory;
+import main.lib.components.CustomButtonFactory;
+import main.lib.components.CustomLabelFactory;
 
 import javax.swing.*;
 
-import static main.utils.Utils.centerComponentHorizontally;
+import static main.lib.utils.Utils.centerComponentHorizontally;
 
 public class Ventana extends JFrame {
     private static final int WINDOW_WIDTH = 800;

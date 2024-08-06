@@ -1,7 +1,7 @@
-package main.components;
+package main.lib.components;
 
-import main.enums.FontEnums;
-import main.builders.LabelBuilder;
+import main.lib.enums.FontEnums;
+import main.lib.builders.LabelBuilder;
 
 import javax.swing.*;
 import java.awt.*;

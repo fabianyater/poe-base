@@ -1,4 +1,4 @@
-package main.builders;
+package main.lib.builders;
 
 import javax.swing.*;
 

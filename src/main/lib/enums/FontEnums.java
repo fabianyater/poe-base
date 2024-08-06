@@ -1,4 +1,4 @@
-package main.enums;
+package main.lib.enums;
 
 public class FontEnums {
     public enum LabelFontSize {

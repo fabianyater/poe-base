@@ -1,6 +1,6 @@
-package main.utils;
+package main.lib.utils;
 
-import main.enums.FontEnums;
+import main.lib.enums.FontEnums;
 
 import java.awt.*;
 

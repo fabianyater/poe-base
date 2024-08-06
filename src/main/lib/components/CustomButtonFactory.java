@@ -1,6 +1,6 @@
-package main.components;
+package main.lib.components;
 
-import main.builders.ButtonBuilder;
+import main.lib.builders.ButtonBuilder;
 
 public class CustomButtonFactory {
     public ButtonBuilder createDefaultButton(String text) {

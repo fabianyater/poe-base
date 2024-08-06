@@ -1,8 +1,8 @@
-package main.builders;
+package main.lib.builders;
 
-import main.enums.FontEnums;
-import main.enums.FontNames;
-import main.utils.FontUtils;
+import main.lib.enums.FontEnums;
+import main.lib.enums.FontNames;
+import main.lib.utils.FontUtils;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 
-import static main.utils.FontUtils.getFontBySize;
+import static main.lib.utils.FontUtils.getFontBySize;
 
 public class AbstractComponentBuilder<T extends JComponent> {
     protected final String text;
