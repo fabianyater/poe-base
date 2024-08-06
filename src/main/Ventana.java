@@ -1,10 +1,11 @@
 package main;
 
+import main.components.CustomButtonFactory;
 import main.components.CustomLabelFactory;
 
 import javax.swing.*;
 
-import static main.utils.Utils.centerLabel;
+import static main.utils.Utils.centerComponent;
 
 public class Ventana extends JFrame {
     private static final int WINDOW_WIDTH = 800;
@@ -16,10 +17,23 @@ public class Ventana extends JFrame {
         setTitle(title);
         setUpFrame();
 
-        label = new CustomLabelFactory().createDefaultLabel("Hola mundo").build();
+        label = new CustomLabelFactory()
+                .createDefaultLabel("Hola mundo")
+                .build();
 
-        centerLabel(label, getSize());
+        centerComponent(label, getSize());
+
+        JButton button = new CustomButtonFactory()
+                .createDefaultButton(null)
+                .setBorderPainted(false)
+                .setFocusPainted(false)
+                .setContentAreaFilled(false)
+                .setOpaque(false)
+                .setBorder(null)
+                .build();
+
         add(label);
+        add(button);
 
     }
 
