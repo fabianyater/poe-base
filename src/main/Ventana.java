@@ -5,7 +5,7 @@ import main.components.CustomLabelFactory;
 
 import javax.swing.*;
 
-import static main.utils.Utils.centerComponent;
+import static main.utils.Utils.centerComponentHorizontally;
 
 public class Ventana extends JFrame {
     private static final int WINDOW_WIDTH = 800;
@@ -21,7 +21,7 @@ public class Ventana extends JFrame {
                 .createDefaultLabel("Hola mundo")
                 .build();
 
-        centerComponent(label, getSize());
+        centerComponentHorizontally(label, getSize());
 
         JButton button = new CustomButtonFactory()
                 .createDefaultButton(null)
