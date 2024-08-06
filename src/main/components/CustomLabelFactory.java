@@ -1,7 +1,7 @@
 package main.components;
 
 import main.enums.FontEnums;
-import main.utils.LabelBuilder;
+import main.builders.LabelBuilder;
 
 import javax.swing.*;
 import java.awt.*;

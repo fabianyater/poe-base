@@ -1,7 +1,8 @@
-package main.utils;
+package main.builders;
 
 import main.enums.FontEnums;
 import main.enums.FontNames;
+import main.utils.FontUtils;
 
 import javax.swing.*;
 import javax.swing.border.Border;
