@@ -42,6 +42,11 @@ public class FontUtils {
             case MEDIUM -> 16;
             case LARGE -> 20;
             case EXTRA_LARGE -> 24;
+            case XX_LARGE -> 32;
+            case XXX_LARGE -> 40;
+            case XXXX_LARGE -> 48;
+            case XXXXX_LARGE -> 56;
+            case XXXXX_LARGE_2 -> 64;
         };
 
         return new Font(fontName, style, size);

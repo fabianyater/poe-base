@@ -20,7 +20,8 @@ public class LabelBuilder {
     private FontEnums.TextTransform textTransform = FontEnums.TextTransform.NONE;
     private FontNames fontName = FontNames.ARIAL;
     private String tooltip = null;
-    private FontEnums.LabelPosition position = FontEnums.LabelPosition.CENTER;
+    private int x = 0;
+    private int y = 0;
 
     public LabelBuilder(String text) {
         this.text = text;
@@ -71,17 +72,25 @@ public class LabelBuilder {
         return this;
     }
 
-    public LabelBuilder setPosition(FontEnums.LabelPosition position) {
-        this.position = position;
+    public LabelBuilder setX(int x) {
+        this.x = x;
+        return this;
+    }
+
+    public LabelBuilder setY(int y) {
+        this.y = y;
         return this;
     }
 
     public JLabel build() {
         String transformedText = FontUtils.transformText(text, textTransform);
-        PositionedLabel label = new PositionedLabel("<html>" + transformedText.replace("\n", "<br>") + "</html>", position);
+        JLabel label = new JLabel("<html>" + transformedText.replace("\n", "<br>") + "</html>");
         label.setFont(getFontBySize(fontName.getFontName(), fontSize, fontStyle));
         label.setForeground(color);
         label.setHorizontalAlignment(alignment);
+
+        Dimension preferredSize = label.getPreferredSize();
+        label.setBounds(x, y, preferredSize.width, preferredSize.height);
 
         if (border != null) {
             label.setBorder(border);

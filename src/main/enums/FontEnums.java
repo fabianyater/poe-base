@@ -5,7 +5,12 @@ public class FontEnums {
         SMALL,
         MEDIUM,
         LARGE,
-        EXTRA_LARGE
+        EXTRA_LARGE,
+        XX_LARGE,
+        XXX_LARGE,
+        XXXX_LARGE,
+        XXXXX_LARGE,
+        XXXXX_LARGE_2
     }
 
     public enum LabelFontStyle {
@@ -20,17 +25,5 @@ public class FontEnums {
         UPPERCASE,
         LOWERCASE,
         CAPITALIZE
-    }
-
-    public enum LabelPosition {
-        TOP_LEFT,
-        TOP_CENTER,
-        TOP_RIGHT,
-        CENTER_LEFT,
-        CENTER,
-        CENTER_RIGHT,
-        BOTTOM_LEFT,
-        BOTTOM_CENTER,
-        BOTTOM_RIGHT
     }
 }
