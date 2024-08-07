@@ -181,6 +181,19 @@ public class AbstractComponentBuilder<T extends JComponent> {
 
     }
 
+    public String getParsedText(T component) {
+        String text = null;
+        if (component instanceof JLabel) {
+            text = ((JLabel) component).getText();
+        } else if (component instanceof JButton) {
+            text = ((JButton) component).getText();
+        }
+        if (text != null) {
+            return text.replaceAll("<[^>]*>", ""); // Eliminar etiquetas HTML
+        }
+        return null;
+    }
+
     public T build() {
         return null;
     }
