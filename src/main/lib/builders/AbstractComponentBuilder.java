@@ -30,7 +30,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     private MouseListener mouseListener;
     private Color background = Color.WHITE;
     private LayoutManager layoutManager = null;
-    private boolean isOpaque = true;
+    private boolean isOpaque = false;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
