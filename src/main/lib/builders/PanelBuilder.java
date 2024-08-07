@@ -21,6 +21,8 @@ public class PanelBuilder extends AbstractComponentBuilder<JPanel> {
 
         panel.setLayout(layoutManager);
 
+        applyCommonAttributes(panel);
+
         return panel;
     }
 }
