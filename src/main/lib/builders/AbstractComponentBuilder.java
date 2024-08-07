@@ -30,6 +30,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     private MouseListener mouseListener;
     private Color background = Color.WHITE;
     private LayoutManager layoutManager = null;
+    private boolean isOpaque = true;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
@@ -115,8 +116,15 @@ public class AbstractComponentBuilder<T extends JComponent> {
         return this;
     }
 
+    public AbstractComponentBuilder<T> setOpaque(boolean isOpaque) {
+        this.isOpaque = isOpaque;
+        return this;
+    }
+
     protected void applyCommonAttributes(T component) {
         component.setLayout(layoutManager);
+        component.setOpaque(isOpaque);
+
 
         if (text != null && !text.isEmpty()) {
             String transformedText = FontUtils.transformText(text, textTransform);
