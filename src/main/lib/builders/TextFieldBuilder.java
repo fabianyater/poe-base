@@ -10,6 +10,10 @@ public class TextFieldBuilder extends AbstractComponentBuilder<JTextField> {
 
     @Override
     public JTextField build() {
-        return new JTextField();
+        JTextField textField = new JTextField();
+
+        applyCommonAttributes(textField);
+
+        return textField;
     }
 }
