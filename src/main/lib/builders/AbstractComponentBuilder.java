@@ -28,6 +28,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     protected Dimension size = null;
     private ActionListener actionListener;
     private MouseListener mouseListener;
+    private Color background = Color.WHITE;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
@@ -103,6 +104,11 @@ public class AbstractComponentBuilder<T extends JComponent> {
         return this;
     }
 
+    public AbstractComponentBuilder<T> setBackground(Color background) {
+        this.background = background;
+        return this;
+    }
+
     protected void applyCommonAttributes(T component) {
         if (text != null && !text.isEmpty()) {
             String transformedText = FontUtils.transformText(text, textTransform);
@@ -143,6 +149,10 @@ public class AbstractComponentBuilder<T extends JComponent> {
 
         if (tooltip != null) {
             component.setToolTipText(tooltip);
+        }
+
+        if (background != null) {
+            component.setBackground(background);
         }
 
         if (actionListener != null) { // Añadir ActionListener al botón

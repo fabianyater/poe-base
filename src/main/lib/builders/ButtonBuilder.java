@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ButtonBuilder extends AbstractComponentBuilder<JButton> {
-    private Color background = Color.WHITE;
     private boolean isOpaque = true;
     private boolean isBorderPainted = true;
     private boolean contentAreaFilled = true;
@@ -13,11 +12,6 @@ public class ButtonBuilder extends AbstractComponentBuilder<JButton> {
 
     public ButtonBuilder(String text) {
         super(text);
-    }
-
-    public ButtonBuilder setBackground(Color background) {
-        this.background = background;
-        return this;
     }
 
     public ButtonBuilder setOpaque(boolean isOpaque) {
@@ -54,10 +48,6 @@ public class ButtonBuilder extends AbstractComponentBuilder<JButton> {
         button.setContentAreaFilled(contentAreaFilled);
         button.setFocusPainted(focusPainted);
         button.setCursor(cursor);
-
-        if (background != null) {
-            button.setBackground(background);
-        }
 
         applyCommonAttributes(button);
 
