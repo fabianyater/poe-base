@@ -29,6 +29,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     private ActionListener actionListener;
     private MouseListener mouseListener;
     private Color background = Color.WHITE;
+    private LayoutManager layoutManager = null;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
@@ -109,7 +110,14 @@ public class AbstractComponentBuilder<T extends JComponent> {
         return this;
     }
 
+    public AbstractComponentBuilder<T> setLayout(LayoutManager layoutManager) {
+        this.layoutManager = layoutManager;
+        return this;
+    }
+
     protected void applyCommonAttributes(T component) {
+        component.setLayout(layoutManager);
+
         if (text != null && !text.isEmpty()) {
             String transformedText = FontUtils.transformText(text, textTransform);
             if (component instanceof JLabel) {
