@@ -31,6 +31,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     private Color background = Color.WHITE;
     private LayoutManager layoutManager = null;
     private boolean isOpaque = false;
+    private boolean underline = false;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
@@ -121,17 +122,24 @@ public class AbstractComponentBuilder<T extends JComponent> {
         return this;
     }
 
+    public AbstractComponentBuilder<T> setUnderline(boolean underline) {
+        this.underline = underline;
+        return this;
+    }
+
     protected void applyCommonAttributes(T component) {
         component.setLayout(layoutManager);
         component.setOpaque(isOpaque);
 
-
         if (text != null && !text.isEmpty()) {
             String transformedText = FontUtils.transformText(text, textTransform);
+            String labelText = underline ? "<html><u>" + transformedText + "</u></html>" : transformedText;
+            labelText = labelText.replace("\n", "<br>");
+
             if (component instanceof JLabel) {
-                ((JLabel) component).setText("<html>" + transformedText.replace("\n", "<br>") + "</html>");
+                ((JLabel) component).setText(labelText);
             } else if (component instanceof JButton) {
-                ((JButton) component).setText("<html>" + transformedText.replace("\n", "<br>") + "</html>");
+                ((JButton) component).setText(labelText);
             }
         }
 
