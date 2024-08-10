@@ -32,6 +32,7 @@ public class AbstractComponentBuilder<T extends JComponent> {
     private LayoutManager layoutManager = null;
     private boolean isOpaque = false;
     private boolean underline = false;
+    private int iconTextGap = 0;
 
     public AbstractComponentBuilder(String text) {
         this.text = text;
@@ -127,6 +128,11 @@ public class AbstractComponentBuilder<T extends JComponent> {
         return this;
     }
 
+    public AbstractComponentBuilder<T> setIconTextGap(int iconTextGap) {
+        this.iconTextGap = iconTextGap;
+        return this;
+    }
+
     protected void applyCommonAttributes(T component) {
         component.setLayout(layoutManager);
         component.setOpaque(isOpaque);
@@ -166,10 +172,13 @@ public class AbstractComponentBuilder<T extends JComponent> {
         if (icon != null) {
             if (component instanceof JLabel) {
                 ((JLabel) component).setIcon(icon);
+                ((JLabel) component).setIconTextGap(iconTextGap);
             } else if (component instanceof JButton) {
                 ((JButton) component).setIcon(icon);
+                ((JButton) component).setIconTextGap(iconTextGap);
             }
         }
+
 
         if (tooltip != null) {
             component.setToolTipText(tooltip);
