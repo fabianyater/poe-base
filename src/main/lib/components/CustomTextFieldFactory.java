@@ -3,7 +3,7 @@ package main.lib.components;
 import main.lib.builders.TextFieldBuilder;
 
 public class CustomTextFieldFactory {
-    public TextFieldBuilder createDefaultTexfield() {
+    public TextFieldBuilder createDefaultPanel() {
         return new TextFieldBuilder("");
     }
 }

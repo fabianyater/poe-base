@@ -1,7 +1,6 @@
 package main.lib.builders;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class RadioButtonBuilder extends AbstractComponentBuilder<JRadioButton> {
 

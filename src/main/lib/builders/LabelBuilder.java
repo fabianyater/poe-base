@@ -8,10 +8,6 @@ public class LabelBuilder extends AbstractComponentBuilder<JLabel> {
         super(text);
     }
 
-    public LabelBuilder() {
-        super(null);
-    }
-
     @Override
     public JLabel build() {
         JLabel label = new JLabel();

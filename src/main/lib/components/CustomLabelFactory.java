@@ -32,18 +32,4 @@ public class CustomLabelFactory {
                 .setFontStyle(FontEnums.LabelFontStyle.BOLD)
                 .build();
     }
-
-    public LabelBuilder createLabelWithIcon(Icon icon) {
-        return (LabelBuilder) new LabelBuilder()
-                .setIcon(icon)
-                .setSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
-    }
-
-    public LabelBuilder createLabelWithTextAndIcon(String text, Icon icon) {
-        return (LabelBuilder) new LabelBuilder(text)
-                .setIcon(icon)
-                .setAlignment(SwingConstants.LEFT)
-                .setIconTextGap(3)
-                .setSize(new Dimension(80, icon.getIconHeight()));
-    }
 }
